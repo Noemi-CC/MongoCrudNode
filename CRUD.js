@@ -20,4 +20,24 @@ module.exports.eliminarRegistro = function(db, callback){
 		console.log("se genero error"+ e)
 	}
 }
+module.exports.consultarYActualizar = function(db, callback){
+	let coleccion = db.collection("users")
+
+	coleccion.find().toArray((error, documents) =>{
+		if(error)console.log(error)
+			console.log(documents)
+		callback()
+	})
+	try{
+		coleccion.updateOne({name:"Eli"}, {$set: {edad:25}})
+		console.log("Se ha actualizado el registro correctamente")
+	}catch(e){
+		console.log("Error actualizando el registro:"+ e)
+	}
+	coleccion.find().toArray((error, documents)=>{
+		if(error)console.log(error)
+			console.log(documents)
+		callback()
+	})
+}
 
