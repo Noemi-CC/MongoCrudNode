@@ -9,6 +9,15 @@ coleccion.insertMany([
 	], (error, result) => {
 		console.log("Resultado de insert:" + result.toString())
 	})
-
-
 }
+module.exports.eliminarRegistro = function(db, callback){
+	let coleccion = db.collection("users")
+	try{
+		coleccion.deleteOne({edad:24})
+		console.log("se elimino el registro correctamente")
+
+	}catch(e){
+		console.log("se genero error"+ e)
+	}
+}
+
