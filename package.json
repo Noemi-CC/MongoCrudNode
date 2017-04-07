@@ -1,0 +1,20 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "CRUD con MongoDB y Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MongoDB",
+    "y",
+    "Node.js"
+  ],
+  "author": "noemi",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.3"
+  }
+}
